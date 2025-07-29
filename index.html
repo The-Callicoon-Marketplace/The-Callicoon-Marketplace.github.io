@@ -40,7 +40,7 @@
         display: block;
     }
     
-    .vendorCard {
+    /* .vendorCard {
         max-width: 600px;
         min-width: 200px;
         width: 25%;
@@ -50,15 +50,80 @@
         margin: 2.5%;
         color: #fff;
         transition: 0.25s;
-    }
+    }*/
     
     .vendorCard:hover {
         opacity: 0.7;
     }
-    
-    .vendorCard img {
-        width: 100%;
-    }
+
+    .vendorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.vendorCard {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  height: 100%; /* optional if you want it to auto-grow */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.25s;
+}
+
+.vendorCard a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.vendorCard img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.vendorCard p {
+    color: #fff;
+  background-color: #000000;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 14px;
+  box-sizing: border-box; /* ensures padding doesn't overflow width */
+}
+
+
+.logoContainer {
+  height: 200px; /* Set to match tallest logo */
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Optional: adds breathing room */
+}
+
+.logoContainer img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
     
     a {
         color: #fff;
@@ -157,21 +222,17 @@
     </div>
     
     <div id="maincontent">
-    <intro>The Callicoon Marketplace at 43 Lower Main Street in Callicoon, New York, is a community space hosting both permanent businesses and rotating pop-ups year round, ranging from food to fiber to furniture.</intro>
-    
-    <div style="color: #000; margin-top: 30px; letter-spacing: 6px;">BUSINESSES / VENDORS</div>
-    
-    <a href="https://www.thecallicoonpantry.com/" target="_BLANK"><div class="vendorCard"><img src="https://s3.us-east-1.amazonaws.com/callicoonmarketplace.com/images/callicoon-pantry.jpg"><p>The Callicoon Pantry</p></div></a>
-    <div class="vendorCard"><img src="https://s3.us-east-1.amazonaws.com/callicoonmarketplace.com/images/dallyworks-woodworking-2.jpg"><p>Dallyworks Woodworking</p></div>
-    <a href="https://www.earlybirdcookery.com/" target="_BLANK"><div class="vendorCard"><img src="https://s3.us-east-1.amazonaws.com/callicoonmarketplace.com/images/early-bird-cookery.jpg"><p>Early Bird Cookery</p></div></a>
-    <a href="http://litthome.com/" target="_BLANK"><div class="vendorCard"><img src="https://s3.us-east-1.amazonaws.com/callicoonmarketplace.com/images/litt-home-book.jpg"><p>Litt Home &amp; Book</p></div></a>
-    <a href="https://www.instagram.com/mel_b_111/" target="_BLANK"><div class="vendorCard"><img src="https://s3.us-east-1.amazonaws.com/callicoonmarketplace.com/images/res-cued.jpg"><p>res•cued</p></div></a>
-    <a href="http://wool-worth.com" target="_BLANK"><div class="vendorCard"><img src="https://s3.us-east-1.amazonaws.com/callicoonmarketplace.com/images/wool-worth-pic.jpg"><p>Wool Worth</p></div></a>
-    
-    
-    
-    
-    
+        <intro>The Callicoon Marketplace at 43 Lower Main Street in Callicoon, New York, is a community space hosting both permanent businesses and rotating pop-ups year round, ranging from food to fiber to furniture.</intro>
+        
+        <div style="color: #000; margin-top: 30px; letter-spacing: 6px;">BUSINESSES / VENDORS</div>
+        <div class="vendorGrid">
+            <div class="vendorCard"><a href="https://www.thecallicoonpantry.com/" target="_BLANK"><img src="https://s3.us-east-1.amazonaws.com/callicoonmarketplace.com/images/callicoon-pantry.jpg"><p>The Callicoon Pantry</p></a></div>
+            <div class="vendorCard"><a href="https://www.rogerthatbakery.com/" target="_BLANK"><div class="logoContainer"><img src="./assets/roger-that-bakery-logo.png"></div><p>Roger That Bakery</p></a></div>
+            <div class="vendorCard"><a href="https://www.countyroadbakery.com/" target="_BLANK"><img src="./assets/county-road-bakery-logo.avif"><p>County Road Bakery</p></a></div>
+            <div class="vendorCard"><a href="https://www.facebook.com/channeryhill/" target="_BLANK"><img src="./assets/channery-hill-logo.jpg"><p>Channery Hill</p></a></div>
+            <div class="vendorCard"><a href="https://www.earlybirdcookery.com/" target="_BLANK"><div class="logoContainer"><img src="https://s3.us-east-1.amazonaws.com/callicoonmarketplace.com/images/early-bird-cookery.jpg"></div><p>Early Bird Cookery</p></a></div>
+            <div class="vendorCard"><a href="http://litthome.com/" target="_BLANK"><img src="https://s3.us-east-1.amazonaws.com/callicoonmarketplace.com/images/litt-home-book.jpg"><p>Litt Home &amp; Book</p></a></div>
+        </div>
     </div>
     
     <div id="footer">
